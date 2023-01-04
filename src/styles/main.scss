@@ -2,6 +2,10 @@
 @import "helpers/variables";
 @import "helpers/mixins";
 @import "helpers/functions";
+@import "helpers/font-face";
+@import "helpers/media";
+@import "helpers/inheritance";
+@import "helpers/flex";
 
 // CSS-файлы библиотек
 @import "vendor/libs";

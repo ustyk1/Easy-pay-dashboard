@@ -1,0 +1,59 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 70px;
+
+  &.wrap {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  &__greeting {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 0 0 auto;
+    
+    h2 {
+      font-size: 20px;
+      line-height: 26px;
+      color: $darkBlue;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 26px;
+      color: rgba($darkBlue, 0.4);
+    }
+  }
+
+  &__search-transactions {
+    display: flex;
+    align-items: center;
+    background-color: $tertiary;
+    border-radius: $border-radius-10;
+    padding: 12px 16px;
+
+    input {
+      border-radius: $border-radius-10;
+      background-color: $tertiary;
+      border: none;
+      outline: none;
+      font-size: 16px;
+
+      &::placeholder {
+        color: rgba($darkBlue, 0.5);
+      }
+    }
+
+    span {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: url('../../../img/sprites/search.svg') no-repeat center center/cover;
+    }
+  }
+}

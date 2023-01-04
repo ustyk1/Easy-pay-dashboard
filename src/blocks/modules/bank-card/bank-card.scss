@@ -1,0 +1,13 @@
+.bank-card {
+  &.wrap {
+    max-width: 390px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,99 @@
+.nav-menu {
+  width: 100% ;
+  height: 100%;
+  overflow-y: auto;
+  & {
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+    /* Track */
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background: $secondary;
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $blue;
+      border-radius: 10px;
+    }
+  }
+
+  &__header {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+
+  .list {
+    @include flex-column-start;
+    height: 100%;
+
+    &__item {
+      border-radius: $border-radius-10;
+      font-size: 16px;
+      font-weight: 600;
+
+      a {
+        @include flex-start;
+        align-items: center;
+        border-radius: $border-radius-10;
+        padding: 13px 8px;
+        position: relative;
+
+        &:active,
+        &.active {
+          background-color: $blue;
+          &::after {
+            content: '';
+            width: 4px;
+            height: 26px;
+            border-radius: 1.5px;
+            background-color: $white;
+            position: absolute;
+            right: 12px;
+          }
+        }
+
+        .item__icon {
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          margin-right: 15px;
+
+          &_1 {
+            background: url('../../../img/sprites/sidebar-icon/category.svg') no-repeat center center/cover;
+          }
+          &_2 {
+            background: url('../../../img/sprites/sidebar-icon/chart.svg') no-repeat center center/cover;
+          }
+          &_3 {
+            background: url('../../../img/sprites/sidebar-icon/send.svg') no-repeat center center/cover;
+          }
+          &_4 {
+            background: url('../../../img/sprites/sidebar-icon/plus.svg') no-repeat center center/cover;
+          }
+          &_5 {
+            background: url('../../../img/sprites/sidebar-icon/upload.svg') no-repeat center center/cover;
+          }
+          &_6 {
+            background: url('../../../img/sprites/sidebar-icon/wallet.svg') no-repeat center center/cover;
+          }
+          &_7 {
+            background: url('../../../img/sprites/sidebar-icon/paper.svg') no-repeat center center/cover;
+          }
+          &_8 {
+            background: url('../../../img/sprites/sidebar-icon/profile.svg') no-repeat center center/cover;
+          }
+          &_9 {
+            background: url('../../../img/sprites/sidebar-icon/setting.svg') no-repeat center center/cover;
+          }
+        }
+      }
+      
+      &:nth-of-type(7) {
+        margin-bottom: auto;
+      }
+    }
+  }
+}
