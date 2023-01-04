@@ -1,0 +1,100 @@
+.transfers {
+
+  &__header {
+    margin-bottom: 25px;
+    font-size: 26px;
+    font-weight: 600;
+  }
+
+  .transfers__table-body-wrapper {
+    width: 100%;
+    height: 215px;
+    // height: 335px;
+    overflow: hidden;
+    overflow-x: auto;
+    position: relative;
+
+    & {
+      &::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+      }
+      /* Track */
+      &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background: $secondary;
+        margin-top: 45px;
+      }
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: $darkGray;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  &__table {
+
+    .table {
+      &__header {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+
+        & > tr {
+          & > th {
+            padding: 10px 0;
+  
+            &:nth-child(2) {
+              color: $darkBlue;
+
+              & > label {
+                font-size: 16px;
+                font-weight: 400;
+
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                
+                & > span {
+                  display: inline-block;
+                  width: 24px;
+                  height: 24px;
+                  margin-left: 4px;
+                  background: url('../../../img/sprites/arrow-down.svg') no-repeat center center/cover;
+                  transition: transform 0.3s ease-in;
+                }
+              }
+            }
+          }
+        }
+      }
+  
+      &__body {
+        & > tr {
+          & > td {  
+            &:nth-child(2) {
+              font-family: "Lexend-Semibold";
+              text-align: right;
+            }
+
+            & > p {
+              &:nth-child(1) {
+                font-family: "Lexend-Semibold";
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  input[id="transfers"]:checked ~ div.transfers__table-body-wrapper label[for="transfers"] >  span {
+    transform: rotate(180deg);
+  }
+
+  input[id="transfers"]:checked ~ &__table-body-wrapper {
+    overflow-y: scroll;
+  }
+}
+  

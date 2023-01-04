@@ -1,0 +1,266 @@
+.quick-transfer {
+  &.wrap {
+    max-width: 390px;
+    width: 100%;
+    margin-bottom: 60px;
+  }
+
+  &__header {
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 600;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    & > span:nth-child(2) {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: url('../../../img/sprites/points.svg') no-repeat center center/cover;
+    }
+  }
+
+  &__card-number {
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 24px;
+      height: 24px;
+      background: url('../../../img/sprites/shield.svg') no-repeat center center/cover;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    & > input {
+      max-width: 390px;
+      width: 100%;
+      padding: 20px 35px 20px 20px;
+      box-sizing: border-box;
+      font-size: 20px;
+      background: $tertiary;
+      border: none;
+      border-radius: $border-radius-12;
+      position: relative;
+      
+      &::placeholder{
+        color: rgba($darkBlue, 0.3);
+      }
+
+      &:focus {
+        outline-color: $blue;
+      }
+    }
+  }
+
+  &__amount-currency {
+    margin-bottom: 30px;
+
+    display: flex;
+    justify-content: space-between;
+
+    .quick-transfer__amount {
+      max-width: 220px;
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+
+      background: $tertiary;
+      border-radius: $border-radius-12;
+      border: none;
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 600;
+      color: $darkBlue;
+     
+      &:focus {
+        outline-color: $blue;
+      }
+
+      @include sm {
+        // font-size: 22px;
+        padding: 20px;
+      }
+    }
+  }
+
+  &__confirm-transfer {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+
+    .quick-transfer__submit {
+      @extend %btn;
+  
+      box-sizing: border-box;
+      background-color: $darkBlue;
+      color: $white;
+      
+      &:active {
+        transform: scale(0.96);
+        background-color: $darkGray;
+        color: $white;
+      }
+    }
+
+    .quick-transfer__save-address {
+      // display: inline-block;
+      // @extend %btn;
+      width: 120px;
+      height: 49px;
+
+      font-family: "Lexend-Regular";
+      border: none;
+      outline: none;
+      border-radius: $border-radius-10;
+  
+      // width: 190px;
+      box-sizing: border-box;
+      background-color: transparent;
+      color: $darkBlue;
+      font-size: 16px;
+      font-weight: 600;
+  
+      &:active {
+        transform: scale(0.96);
+        background-color: $darkGray;
+        color: $white;
+      }
+    }
+
+  }
+  
+
+  
+  
+  .select {
+    flex-shrink: 0;
+
+    width: 150px;
+    height: 72px;
+    box-sizing: border-box;
+    padding-top: 30px;
+    margin-left: 20px;
+    position: relative;
+    
+    border-radius: $border-radius-12;
+    // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: $tertiary;
+    
+    &::before {
+      content: "Currency";
+      width: 100px;
+      height: auto;
+      color: rgba($darkBlue, 0.6);
+      font-size: 14px;
+
+      position: absolute;
+      top: 10px;
+      left: 15px;
+    }
+    
+    & > .selectBtn {
+      // width: 150px;
+      width: 100%;
+      padding: 5px 10px 10px 15px;
+      box-sizing: border-box;
+      
+      font-size: 22px;
+      font-weight: 700;
+      background-color: $tertiary;
+      border-radius: $border-radius-12;
+      cursor: pointer;
+
+      position: relative;
+
+      -webkit-user-select: none;
+        -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+
+      &::after {
+        content: "";
+        width: 24px;
+        height: 24px;
+        background: url('../../../img/sprites/arrow-down.svg') no-repeat center center/cover;
+        transition: 0.2s ease;
+
+        position: absolute;
+        top: -20px;
+        right: 12px;
+      }
+
+      &.toggle {
+        &:after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    & > .selectDropdown {
+      width: 149.98px;
+      height: 0;
+      padding-top: 5px;
+
+      position: absolute;
+      top: 80%;
+      z-index: 1;
+    
+
+      overflow: hidden;
+      border-radius: 0 0 12px 12px;
+      background: $tertiary;
+      -webkit-transform: scale(1, 0);
+              transform: scale(1, 0);
+      -webkit-transform-origin: top center;
+              transform-origin: top center;
+      visibility: hidden;
+      transition: 0.2s ease-in-out;
+
+      & {
+        &::-webkit-scrollbar {
+          width: 3px;
+        }
+        /* Track */
+        &::-webkit-scrollbar-track {
+          border-radius: 10px;
+          margin: 0 0 10px 0;
+          background: $secondary;
+        }
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          background: $darkGray;
+          border-radius: 10px;
+        }
+      }
+
+      &.toggle {
+        height: 115px;
+        overflow-y: scroll;
+        visibility: visible;
+        -webkit-transform: scale(1, 1);
+                transform: scale(1, 1);
+      }
+
+      & > .option {
+        user-select: none;
+        padding: 10px 10px 10px 15px;
+        box-sizing: border-box;
+        cursor: pointer;
+
+        &:hover {
+          background: $gray;
+        }
+      }
+    }
+  }
+}   
