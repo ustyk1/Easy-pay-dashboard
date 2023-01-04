@@ -1,0 +1,76 @@
+.total-balance {
+  margin-bottom: 60px;
+  min-height: 295px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+
+  &.wrap {
+    width: 100%;
+  }
+
+  &__header {
+    font-size: 28px;
+    font-weight: 600;
+  }
+
+  &__balance {
+    color: $gray;
+
+    label {
+      display: flex;
+      align-items: center;
+    
+      span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background: url('../../../img/sprites/arrow-down.svg') no-repeat center center/cover;
+      }
+    }
+  }
+
+  &__current-balance {
+    // font-size: 50px;
+    font-size: clamp(2rem, 1.679rem + 1.61vw, 3.125rem);
+    font-weight: 700;
+
+    & > span {
+      text-transform: uppercase;
+      color: $blue;
+    }
+  }
+
+  &__wallet-id {
+    color: $gray;
+    font-size: 16px;
+  }
+
+  &__buttons-wrap {
+    display: flex;
+    gap: 12px;
+
+    .total-balance__button {
+      @extend %btn;
+
+      &:active {
+        transform: scale(0.96);
+        background-color: $darkGray;
+        color: $white;
+      }
+
+      &_dark {
+        background-color: $darkBlue;
+        color: $white;
+      }
+
+      &_light {
+        background-color: $tertiary;
+        color: rgba($darkBlue, 0.7);
+      }
+    }
+  }
+}

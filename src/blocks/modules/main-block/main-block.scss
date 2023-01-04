@@ -1,4 +1,7 @@
 .main-block {
   max-width: 600px;
+  min-width: 290px;
   width: 100%;
+  overflow-x: auto;
+  border: 1px solid yellow;
 }
