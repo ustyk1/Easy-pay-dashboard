@@ -9,6 +9,7 @@
   .transfers__table-body-wrapper {
     width: 100%;
     height: 215px;
+    // height: auto;
     // height: 335px;
     overflow: hidden;
     overflow-x: auto;
@@ -94,7 +95,8 @@
   }
 
   input[id="transfers"]:checked ~ &__table-body-wrapper {
-    overflow-y: scroll;
+    // overflow-y: scroll;
+    height: auto;
   }
 }
   
