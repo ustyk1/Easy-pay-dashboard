@@ -1,7 +1,8 @@
 .quick-transfer {
   &.wrap {
-    max-width: 390px;
+    max-width: 450px;
     width: 100%;
+    margin: 0 auto;
     margin-bottom: 60px;
   }
 
@@ -41,7 +42,7 @@
     }
 
     & > input {
-      max-width: 390px;
+      max-width: 450px;
       width: 100%;
       padding: 20px 35px 20px 20px;
       box-sizing: border-box;
@@ -76,18 +77,13 @@
       background: $tertiary;
       border-radius: $border-radius-12;
       border: none;
-      font-size: 24px;
+      font-size: 22px;
       line-height: 32px;
       font-weight: 600;
       color: $darkBlue;
      
       &:focus {
         outline-color: $blue;
-      }
-
-      @include sm {
-        // font-size: 22px;
-        padding: 20px;
       }
     }
   }
@@ -136,11 +132,7 @@
         color: $white;
       }
     }
-
   }
-  
-
-  
   
   .select {
     flex-shrink: 0;
@@ -215,7 +207,6 @@
       top: 80%;
       z-index: 1;
     
-
       overflow: hidden;
       border-radius: 0 0 12px 12px;
       background: $tertiary;
@@ -260,6 +251,15 @@
         &:hover {
           background: $gray;
         }
+      }
+    }
+  }
+
+  @media (min-width: 375px) {
+    &__amount-currency {
+      .quick-transfer__amount {
+        padding: 20px;
+        font-size: 24px;
       }
     }
   }

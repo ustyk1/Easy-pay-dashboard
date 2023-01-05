@@ -39,10 +39,10 @@
   }
 
   &__table-body-wrapper {
-    height: 335px;
+    // height: 335px;
+    height: 310px;
     overflow: hidden;
     overflow-x: auto;
-    transition: height .5s ease;
     position: relative;
 
     & {
@@ -65,8 +65,7 @@
 
     .table {
       max-width: 600px;
-      min-width: 500px;
-
+      // min-width: 500px;
       position: relative;
   
       &__header {
@@ -74,7 +73,17 @@
         top: 0;
         z-index: 5;
 
+        clip: rect(0 0 0 0);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        position: absolute;
+
         & > tr {
+          display: block;
+
           & > th {
 
             &::after {
@@ -106,7 +115,24 @@
 
       &__body {
         & > tr {      
+          display: block;
+
           & > td {  
+            display: block;
+            padding: 10px 0 10px 0;
+            border-bottom: none;  
+            text-align: right;
+
+            &:last-child {
+              border-bottom: 1px solid #D9D9D9;  
+            }
+
+            &::before {
+              content: attr(data-label);
+              color: #687D8C;
+              float: left;
+              font-weight: 600;
+            }
 
             &:nth-child(1) {
               background-color: $white;
@@ -135,13 +161,55 @@
     height: auto;
   }
 
-  @include lg {
+  @media (min-width: 375px) {
     &__table-body-wrapper {
+
+      .table {
+        min-width: 500px;
+
+        &__header {
+          clip: auto;
+          height: auto;
+          width: auto;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          position: static;
+
+          & > tr {
+            display:table-row;
+          }
+        }
+  
+        &__body {
+          & > tr {
+            display: table-row;
+
+            & > td { 
+              display:table-cell;
+              padding: 20px 10px 20px 0;
+              border-bottom: 1px solid #D9D9D9;  
+              text-align: left;
+
+              &::before {
+                content: '';
+                float: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 560px) {
+    &__table-body-wrapper {
+      height: 335px;
+
       .table {
         &__header {
-          & > tr {
+          & > tr {     
             & > th {
-             
               &:nth-child(1) {
                 width: 210px;
               }
@@ -154,21 +222,93 @@
             & > td {  
               &:nth-child(1) {
                 & > p {
-                  &:nth-child(1) { 
-                  }
-  
                   &:nth-child(2) {
                     display: block;
                   }
                 }
-              }
-        
-              &:nth-child(3) {
               }
             }
           }
         }
       }
     }
+  }
+
+  // min-width: 640px
+  @include sm {
+  };
+
+  // min-width: 768px
+  @include md {
+    &__table-body-wrapper {
+      height: 315px;
+
+      .table {
+        &__header {
+          & > tr {
+            & > th {
+              &:nth-child(1) {
+                width: 140px;
+              }
+            }
+          }
+        }
+  
+        &__body {
+          & > tr {
+            & > td {  
+              &:nth-child(1) {
+                & > p {
+                  &:nth-child(2) {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  };
+
+  // min-width: 1024px
+  @include lg {
+    &__table-body-wrapper {
+      height: 335px;
+
+      .table {
+        &__header {
+          & > tr {
+            & > th {
+              &:nth-child(1) {
+                width: 210px;
+              }
+            }
+          }
+        }
+  
+        &__body {
+          & > tr {
+            & > td {  
+              &:nth-child(1) {
+                & > p {
+                  &:nth-child(2) {
+                    display: block;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  };
+
+  // min-width: 1280px
+  @include xl {
+  };
+
+  // min-width: 1536px
+  @include xxl {
   }
 }

@@ -1,4 +1,6 @@
 .transfers {
+  max-width: 450px;
+  margin: 0 auto;
 
   &__header {
     margin-bottom: 25px;
@@ -9,8 +11,6 @@
   .transfers__table-body-wrapper {
     width: 100%;
     height: 215px;
-    // height: auto;
-    // height: 335px;
     overflow: hidden;
     overflow-x: auto;
     position: relative;
@@ -37,6 +37,8 @@
   &__table {
 
     .table {
+      table-layout: fixed;
+
       &__header {
         position: sticky;
         top: 0;
@@ -45,7 +47,11 @@
         & > tr {
           & > th {
             padding: 10px 0;
-  
+
+            &:nth-child(1) {
+              width: 130px;
+            }
+
             &:nth-child(2) {
               color: $darkBlue;
 
@@ -98,5 +104,20 @@
     // overflow-y: scroll;
     height: auto;
   }
+
+  @media (min-width: 375px) {
+    &__table-body-wrapper {
+      .table {
+        &__header {
+          & > tr {
+            & > th {
+              &:nth-child(1) {
+                width: 200px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
-  
