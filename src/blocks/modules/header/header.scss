@@ -5,6 +5,9 @@
   flex-wrap: wrap;
   gap: 15px;
   margin-bottom: 60px;
+  padding-right: 50px;
+  position: relative;
+  box-sizing: border-box;
 
   &.wrap {
     width: 100%;
@@ -37,7 +40,7 @@
     border-radius: $border-radius-10;
     padding: 12px 16px;
 
-    input {
+    input[name="search-transactions"] {
       border-radius: $border-radius-10;
       background-color: $tertiary;
       border: none;
@@ -55,5 +58,70 @@
       height: 24px;
       background: url('../../../img/sprites/search.svg') no-repeat center center/cover;
     }
+  }
+
+  .hamburger {
+    width: 40px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    top: 5px;
+
+    .hamburger__line {
+      width: 40px;
+      height: 5px;
+      border-radius: 5px;
+      background-color: $blue;
+      display: block;
+      margin: 8px auto;
+      -webkit-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &.is-active {
+      & .hamburger__line_1,
+      & .hamburger__line_3 {
+        width: 30px;
+      }
+
+      & .hamburger__line_1 {
+        -webkit-transform: translateX(-6px) translateY(6px) rotate(-25deg);
+        -ms-transform: translateX(-6px) translateY(6px) rotate(-25deg);
+        -o-transform: translateX(-6px) translateY(6px) rotate(-25deg);
+        transform: translateX(-6px) translateY(6px) rotate(-25deg);
+      }
+      & .hamburger__line_3 {
+        -webkit-transform: translateX(-6px) translateY(-6px) rotate(25deg);
+      -ms-transform: translateX(-6px) translateY(-6px) rotate(25deg);
+      -o-transform: translateX(-6px) translateY(-6px) rotate(25deg);
+      transform: translateX(-6px)  translateY(-6px) rotate(25deg);
+      }
+    }
+
+    &:not(.is-active):hover {
+      & > .hamburger__line {
+        animation: toggleMenuAnimation 1.5s steps(10) infinite;
+
+        &.hamburger__line_2 {
+          animation-delay: 0.1s;
+        }
+        &.hamburger__line_1 {
+          animation-delay: 0.3s;
+        }
+        &.hamburger__line_3 {
+          animation-delay: 0.5s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes toggleMenuAnimation {
+  0%, 60% {
+    width: 0px;
+  }
+  50%, 100% {
+    width: 35px;	
   }
 }

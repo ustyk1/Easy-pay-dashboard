@@ -3,17 +3,18 @@
   width: 100%;
   min-width: 240px;
   // height: 100%;
+  height: 100vh;
   box-sizing: border-box;
 
   border-radius: $border-radius-30;
   color: $white;
 
-  // position: absolute;
-  // z-index: 10;
-  // transform: translateX(-250px);
-  // transition: transform 0.3s ease-in-out;
-  
-  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  transform: translateX(-280px);
+  transition: transform 0.7s cubic-bezier(.68,-0.55,.27,1.55);
 
   .logo {
     display: flex;
@@ -48,7 +49,10 @@
   };
   // min-width: 1280px
   @include xl {
+    height: auto;
     display: block;
+    position: static;
+    transform: translateX(0);
   };
   // min-width: 1536px
   @include xxl {

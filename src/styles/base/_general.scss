@@ -41,6 +41,12 @@ body {
   align-items: center;
   gap: 40px;
 
+  input[id="toggle-menu"]:checked {
+    & + .sidebar-left {
+      transform: translateX(0);
+    }
+  }
+
   // min-width: 640px
   @include sm {
   };
