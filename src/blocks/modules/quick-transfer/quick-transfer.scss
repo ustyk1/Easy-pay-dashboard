@@ -21,7 +21,7 @@
       display: inline-block;
       width: 24px;
       height: 24px;
-      background: url('../../../img/sprites/points.svg') no-repeat center center/cover;
+      background: url('../img/sprites/points.svg') no-repeat center center/cover;
     }
   }
 
@@ -34,7 +34,7 @@
       content: '';
       width: 24px;
       height: 24px;
-      background: url('../../../img/sprites/shield.svg') no-repeat center center/cover;
+      background: url('../img/sprites/shield.svg') no-repeat center center/cover;
       position: absolute;
       right: 0;
       top: 50%;
@@ -183,7 +183,7 @@
         content: "";
         width: 24px;
         height: 24px;
-        background: url('../../../img/sprites/arrow-down.svg') no-repeat center center/cover;
+        background: url('../img/sprites/arrow-down.svg') no-repeat center center/cover;
         transition: 0.2s ease;
 
         position: absolute;

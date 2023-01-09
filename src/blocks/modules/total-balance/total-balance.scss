@@ -58,7 +58,7 @@
         content: "";
         width: 24px;
         height: 24px;
-        background: url('../../../img/sprites/arrow-down.svg') no-repeat center center/cover;
+        background: url('../img/sprites/arrow-down.svg') no-repeat center center/cover;
         transition: 0.2s ease;
 
         position: absolute;
@@ -129,15 +129,6 @@
       }
     }
   }
-
-
-
-
-
-
-
-
-
 
   &.wrap {
     width: 100%;
