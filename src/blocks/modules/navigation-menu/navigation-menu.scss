@@ -21,7 +21,8 @@
     /* Track */
     &::-webkit-scrollbar-track {
       border-radius: 10px;
-      background: $secondary;
+      background: $darkBlue;
+      margin: 45px 0;
     }
     /* Handle */
     &::-webkit-scrollbar-thumb {

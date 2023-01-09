@@ -6,7 +6,7 @@
 
   &__header {
     margin-bottom: 25px;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 600;
 
     display: flex;
@@ -39,7 +39,6 @@
   }
 
   &__table-body-wrapper {
-    // height: 335px;
     height: 310px;
     overflow: hidden;
     overflow-x: auto;
@@ -157,7 +156,6 @@
   }
 
   input[id="recent-transactions"]:checked ~ &__table-body-wrapper {
-    // overflow: scroll;
     height: auto;
   }
 
@@ -204,7 +202,7 @@
 
   @media (min-width: 560px) {
     &__table-body-wrapper {
-      height: 335px;
+      height: 334px;
 
       .table {
         &__header {
@@ -240,6 +238,9 @@
 
   // min-width: 768px
   @include md {
+    &__header {
+      font-size: 26px;
+    }
     &__table-body-wrapper {
       height: 315px;
 
@@ -274,7 +275,7 @@
   // min-width: 1024px
   @include lg {
     &__table-body-wrapper {
-      height: 335px;
+      height: 333px;
 
       .table {
         &__header {

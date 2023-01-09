@@ -1,11 +1,24 @@
 <div class="total-balance wrap">
   <h2 class="total-balance__header">Total Balance</h2>
-  <div class="total-balance__balance">
-    <input type="text" hidden>
-    <label for="">USDC Balance<span></span></label>
-    <div></div>
+  <div class="total-balance__balance-currency select">
+    <div class="selectBtn" data-type="firstOption">USDC</div>
+    <div class="selectDropdown">
+      <div class="option" data-option="content_1" data-type="firstOption">USDC</div>
+      <div class="option" data-option="content_2" data-type="secondOption">BTC</div>
+      <div class="option" data-option="content_3" data-type="thirdOption">BTH</div>
+      <div class="option" data-option="content_4" data-type="fourthOption">ETH</div>
+      <div class="option" data-option="content_5" data-type="fifthOption">ETC</div>
+      <div class="option" data-option="content_6" data-type="sixthOption">LTC</div>
+    </div>
   </div>
-  <h3 class="total-balance__current-balance">54,819.74&nbsp;<span>usdc</span></h3>
+  <div class="total-balance__sum">
+    <p id="content_1" class="sum total-balance__current-balance">54,819.74&nbsp;<span>usdc</span></p>
+    <p id="content_2" class="inv sum total-balance__current-balance">45,112.23&nbsp;<span>BTC</span></p>
+    <p id="content_3" class="inv sum total-balance__current-balance">39,569.01&nbsp;<span>BTH</span></p>
+    <p id="content_4" class="inv sum total-balance__current-balance">53,711.01&nbsp;<span>ETH</span></p>
+    <p id="content_5" class="inv sum total-balance__current-balance">51,905.01&nbsp;<span>ETC</span></p>
+    <p id="content_6" class="inv sum total-balance__current-balance">50,778.01&nbsp;<span>LTC</span></p>
+  </div>
   <p class="total-balance__wallet-id">Wallet ID: 2QVT7C0LOWEJ</p>
   <div class="total-balance__buttons-wrap">
     <button class="total-balance__button total-balance__button_dark">Deposit</button>
