@@ -125,3 +125,9 @@
     width: 35px;	
   }
 }
+
+@include xl {
+  .hamburger {
+    display: none;
+  }
+};
